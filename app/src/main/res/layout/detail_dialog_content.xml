@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="0"
+        android:divider="?android:attr/dividerHorizontal"
+        android:showDividers="middle"
+        android:id="@+id/table">
+
+        <TableRow
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/TableHeaderText"
+                android:gravity="center_vertical|start"
+                android:text="" />
+
+            <TextView
+                style="@style/TableHeaderText"
+                android:layout_marginStart="24dp"
+                android:gravity="center_vertical|end"
+                android:text="時間"/>
+
+            <TextView
+                style="@style/TableHeaderText"
+                android:layout_marginStart="24dp"
+                android:gravity="center_vertical|end"
+                android:text="残り時間"/>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="* 2台運行"
+        android:textColor="@color/black"
+        android:alpha=".54"
+        android:textSize="13sp"
+        android:layout_marginTop="8dp"
+        android:id="@+id/two_buses"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="* 微生物病研究所前(降車専用)で停車"
+        android:textColor="@color/black"
+        android:alpha=".54"
+        android:textSize="13sp"
+        android:layout_marginTop="8dp"
+        android:id="@+id/micro_disease"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="今日は休日です。運行していない可能性があります。"
+        android:textColor="@color/red"
+        android:alpha=".87"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:id="@+id/holiday"/>
+
+</LinearLayout>

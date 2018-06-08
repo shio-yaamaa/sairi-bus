@@ -1,0 +1,13 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">4dp</dimen>
+    <dimen name="activity_vertical_margin">8dp</dimen>
+
+    <dimen name="margin_height_for_current_time">15dp</dimen>
+
+    <dimen name="row_title_edge_width">4dp</dimen>
+    <dimen name="row_title_horizontal_margin">4dp</dimen>
+
+    <dimen name="time_height">20dp</dimen>
+    <dimen name="margin_between_rows">8dp</dimen>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/SingleLineListItem">
+
+    <TextView
+        style="@style/SingleLineListText"
+        android:gravity="center_vertical|start"
+        android:layout_alignParentStart="true"
+        android:id="@+id/name"/>
+
+    <TextView
+        style="@style/SingleLineListText"
+        android:gravity="center_vertical|end"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/time"/>
+
+</RelativeLayout>

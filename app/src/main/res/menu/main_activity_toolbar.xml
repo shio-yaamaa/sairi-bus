@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/current_time"
+        android:icon="@drawable/ic_appbar_current_time"
+        android:title="現在時刻へ"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/show_hide"
+        android:icon="@drawable/ic_appbar_show_hide"
+        android:title="表示/非表示"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/edit_classwork"
+        android:icon="@drawable/ic_appbar_edit_classwork"
+        android:title="授業を編集"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/reload"
+        android:icon="@drawable/ic_appbar_reload"
+        android:title="再読み込み"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/browser"
+        android:icon="@drawable/ic_appbar_browser"
+        android:title="ブラウザで閲覧"
+        app:showAsAction="ifRoom"/>
+
+</menu>

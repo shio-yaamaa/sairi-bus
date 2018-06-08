@@ -1,0 +1,86 @@
+<resources>
+
+    <style
+        name="AppTheme"
+        parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/white</item>
+    </style>
+
+    <style
+        name="SingleLineListItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+
+    <style
+        name="SingleLineListText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style
+        name="TwoLineListItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+
+    <style
+        name="TwoLineListText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style
+        name="ListPrimaryText"
+        parent="TwoLineListText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:alpha">.87</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+    </style>
+
+    <style
+        name="ListSecondaryText"
+        parent="TwoLineListText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:alpha">.54</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style
+        name="TableText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style
+        name="TableHeaderText"
+        parent="TableText">
+        <item name="android:layout_height">56dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:alpha">.54</item>
+    </style>
+
+    <style
+        name="TableBodyText"
+        parent="TableText">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:alpha">.87</item>
+    </style>
+
+</resources>

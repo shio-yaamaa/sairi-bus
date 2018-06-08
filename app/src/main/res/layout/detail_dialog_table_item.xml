@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        style="@style/TableBodyText"
+        android:gravity="center_vertical|start"
+        android:id="@+id/name"/>
+
+    <TextView
+        style="@style/TableBodyText"
+        android:layout_marginStart="24dp"
+        android:gravity="center_vertical|end"
+        android:id="@+id/time"/>
+
+    <TextView
+        style="@style/TableBodyText"
+        android:layout_marginStart="24dp"
+        android:gravity="center_vertical|end"
+        android:id="@+id/time_left"/>
+
+</TableRow>
