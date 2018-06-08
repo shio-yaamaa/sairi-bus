@@ -4,12 +4,13 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
+import android.util.Log;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -25,7 +26,7 @@ public class HolidayDataLoader extends AsyncTask<Boolean, Void, Boolean> {
         boolean errorFlag = false;
 
         if (!isDataValid) {
-            errorFlag = parseHtml();
+            errorFlag = parseCsv();
         }
 
         setIsHoliday();
@@ -38,7 +39,7 @@ public class HolidayDataLoader extends AsyncTask<Boolean, Void, Boolean> {
         HolidayManager.activity.readyHoliday(errorFlag);
     }
 
-    private boolean parseHtml() {
+    private boolean parseCsv() {
 
         Boolean errorFlag = false;
 
@@ -47,28 +48,22 @@ public class HolidayDataLoader extends AsyncTask<Boolean, Void, Boolean> {
         List<int[]> monthAndDateList = new ArrayList<>();
 
         try {
-
-            Document doc = Jsoup.connect(Constants.HOLIDAY_URL).get();
-            Element body = doc.body();
-
-            Elements tables = body.getElementsByClass("tableBase");
-
-            Element tableOfThisYear = null;
-            for (Element table : tables) {
-                if (table.previousElementSibling().text().contains(String.valueOf(year))) {
-                    tableOfThisYear = table;
-                    break;
+            URL url = new URL(Constants.HOLIDAY_URL);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (line.split(",")[0].split("-")[0].equals(String.valueOf(year))) { // If the line is for the target year
+                    String[] yearMonthDateStrings = line.split(",")[0].split("-");
+                    int[] monthAndDate = new int[] {Integer.parseInt(yearMonthDateStrings[1]), Integer.parseInt(yearMonthDateStrings[2])};
+                    Log.d("myTag", "Holiday: " + monthAndDate[0] + "/" + monthAndDate[1]);
+                    monthAndDateList.add(monthAndDate);
                 }
             }
-
-            Element tableBody = tableOfThisYear.getElementsByTag("tbody").get(0);
-
-            for (Element tableRow : tableBody.children()) {
-                String monthAndDateInString = tableRow.children().get(1).text();
-                monthAndDateList.add(Utility.parseMonthAndDate(monthAndDateInString));
-            }
-
-        } catch (Exception e) {
+            reader.close();
+        } catch (MalformedURLException e) {
+            errorFlag = true;
+            e.printStackTrace();
+        } catch (IOException e) {
             errorFlag = true;
             e.printStackTrace();
         }

@@ -138,7 +138,7 @@ public class Constants {
 
     public static String RESTAURANT_SHOP_URL = "http://www.osaka-u.ac.jp/ja/guide/student/general/welfare.html";
 
-    public static String HOLIDAY_URL = "http://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html";
+    public static String HOLIDAY_URL = "http://www8.cao.go.jp/chosei/shukujitsu/syukujitsu_kyujitsu.csv";
 
     public static String[] linkNames = new String[]{
             "学内連絡バス",
